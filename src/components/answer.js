@@ -2,7 +2,6 @@
 import React from "react"
 
 const Answer = () => {
-//   if (process.browser) {
   const now = new Date()
   const hour = now.getHours()
   const minute = now.getMinutes()
