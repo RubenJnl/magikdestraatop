@@ -26,7 +26,10 @@ const Answer = () => {
   } else {
     return (
         <React.Fragment>
-            <h2 className="answer">Ja</h2>
+            <h2 className="answer">
+              Ja
+              <span style="font-size: 50%;">, Voorlopig nog wel</span>
+            </h2>
             <style jsx>{`
                 .answer {
                     display: block;
