@@ -26,7 +26,11 @@ const Answer = () => {
   } else {
     return (
         <React.Fragment>
-            <h2 className="answer">Ja</h2>
+            <h2 className="answer">
+                Ja
+
+                <span className="answerAddition">, Voorlopig nog wel</span>
+            </h2>
             <style jsx>{`
                 .answer {
                     display: block;
@@ -34,6 +38,10 @@ const Answer = () => {
                     font-size: 3em;
                     font-size: clamp(2em, 10em, 10vw);
                     margin-top: .25em;
+                }
+
+                .answerAddition {
+                    font-size: 50%;
                 }
             `}
             </style>
