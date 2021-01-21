@@ -3,7 +3,6 @@ import * as Style from './styles'
 function Counter() {
 
   const Calculate = () => {
-    let year = new Date().getFullYear();
     const difference = +new Date(2021, 0, 23, 21) - +new Date();
     let timeLeft = {};
 
