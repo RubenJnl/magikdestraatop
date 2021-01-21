@@ -1,26 +1,45 @@
 import styled from 'styled-components';
+import getBackground from '../helpers/background'
+import Switch from '../helpers/switch'
 
-export const Container = styled.main`
-  min-height: 100vh;
-  padding: 0 0.5rem;
+export const Header = styled.h1`
+  color: ${Switch()};
+  margin: 0;
+  line-height: 1.15;
+  font-size: 3em;
+  font-size: clamp(2em, 10em, 10vw);
+`
+
+export const Wrapper = styled.main`
+    padding: 5rem 0 .5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    background: url(${getBackground().small}) no-repeat center center; 
+    background-position: center center;
+
+    @media all and (min-width: 500px), (min-height: 500px) {
+        background-image: url(${getBackground().medium});
+    }
+    
+    @media all and (min-width: 1500px) {
+        background-image: url(${getBackground().medium});
+    }
+    
+    @media all and (min-width: 2000px) {  
+        background-image: url(${getBackground().large});
+    }
+`
+
+export const Container = styled.div`
+  padding: 10vh .5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: url('/francois-hoang-xxZCfAnMUrM-unsplash-small.jpg') no-repeat center center; */
-  background-position: center center;
-
-  @media all and (min-width: 500px), (min-height: 500px) {
-      /* background-image: url(francois-hoang-xxZCfAnMUrM-unsplash-medium.jpg); */
-  }
-  
-  @media all and (min-width: 1500px) {
-      /* background-image: url(francois-hoang-xxZCfAnMUrM-unsplash.jpg); */
-  }
-  
-  @media all and (min-width: 2000px) {  
-      /* background-image: url(francois-hoang-xxZCfAnMUrM-unsplash-original.jpg); */
-  }
 `
 
 // let all = `

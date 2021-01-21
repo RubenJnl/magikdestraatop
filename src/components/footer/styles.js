@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 
 export const Footer = styled.footer`
-  footer {
     width: 100%;
     max-width: 690px;
+    margin: 0 auto;
     padding: 15px 0;
     border-top: 1px solid #eaeaea;
     display: flex;
@@ -21,5 +21,4 @@ export const Footer = styled.footer`
       padding: 0;
       margin: 0;
     }
-  }
 `

@@ -1,4 +1,5 @@
 import React from 'react';
+import getBackground from '../../helpers/background';
 import * as Styles from './styles'
 
 function Footer() {
@@ -21,7 +22,7 @@ function Footer() {
             </a>
 
             <p>
-                photo by: Francois Hoang - unsplash
+                photo by: {getBackground().madeBy}
             </p>
         </Styles.Footer>
     )
