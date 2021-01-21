@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import getBackground from '../helpers/background'
-import Switch from '../helpers/switch'
+import Color from '../helpers/color'
 
 export const Header = styled.h1`
-  color: ${Switch()};
+  color: ${Color()};
   margin: 0;
   line-height: 1.15;
   font-size: 3em;

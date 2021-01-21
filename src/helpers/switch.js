@@ -1,17 +1,25 @@
-import Theme from '../style/config';
 
 function Switch() {
   const now = new Date()
   const hour = now.getHours()
   const minute = now.getMinutes()
+  const day = now.getDate()
+  const month = now.getMonth()
 
-  if ( (hour >= 21 && hour <= 4) || (hour === 4 && minute < 30)) {
+  // console.log(day, month);
+  // console.log((hour >= 20 || hour < 4) || (hour === 4 && minute < 30) );
+  if (day <= 22 && month === 0 ){
     return (
-      Theme.color.title.night
+      'day'
+    )
+  } else if ( (hour >= 20 || hour < 4) || (hour === 4 && minute < 30)) {
+    console.log('night');
+    return ( 
+      'night' 
     )
   } else {
     return (
-      Theme.color.title.day
+      'day'
     )
   }
 

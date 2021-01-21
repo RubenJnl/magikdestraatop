@@ -1,29 +1,24 @@
 
 import React from "react"
 import * as Styles from './styles'
+import Switch from '../../helpers/switch'
 
 const Answer = () => {
-  const now = new Date()
-  const hour = now.getHours()
-  const minute = now.getMinutes()
 
-  if ((hour === 20 && minute >= 30) || hour > 20) {
+  if (Switch() === 'night') {
     return (
-        <Styles.AnswerNegative>
-            Nee
-        </Styles.AnswerNegative>
+      <Styles.AnswerNegative>
+          Nee
+      </Styles.AnswerNegative>
     )
   } else {
     return (
-        <>
-            <Styles.AnswerPositive>
-                Ja
-                <Styles.SubTitle>
-                    , Voorlopig nog wel
-                </Styles.SubTitle>
-            </Styles.AnswerPositive>
-            
-        </>
+      <Styles.AnswerPositive>
+          Ja
+          <Styles.SubTitle>
+              , Voorlopig nog wel
+          </Styles.SubTitle>
+      </Styles.AnswerPositive>
     )
   }
 
