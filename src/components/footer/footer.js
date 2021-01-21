@@ -1,9 +1,10 @@
 import React from 'react';
+import * as Styles from './styles'
 
 function Footer() {
 
     return (
-        <footer>
+        <Styles.Footer>
             <a
                 href="https://kwartoverbier.nl"
                 target="_blank"
@@ -22,7 +23,7 @@ function Footer() {
             <p>
                 photo by: Francois Hoang - unsplash
             </p>
-        </footer>
+        </Styles.Footer>
     )
 }
 
