@@ -2,6 +2,7 @@
 import React from "react"
 import * as Styles from './styles'
 import Switch from '../../helpers/switch'
+import Counter from '../counter/counter'
 
 const Answer = () => {
 
@@ -13,12 +14,15 @@ const Answer = () => {
     )
   } else {
     return (
-      <Styles.AnswerPositive>
-          Ja
-          <Styles.SubTitle>
-              , Voorlopig nog wel
-          </Styles.SubTitle>
-      </Styles.AnswerPositive>
+      <>
+        <Styles.AnswerPositive>
+            Ja
+            <Styles.SubTitle>
+                , Voorlopig nog wel
+            </Styles.SubTitle>
+        </Styles.AnswerPositive>
+        <Counter></Counter>
+      </>
     )
   }
 
