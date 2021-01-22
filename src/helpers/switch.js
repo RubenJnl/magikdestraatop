@@ -6,12 +6,22 @@ function Switch() {
   const day = now.getDate()
   const month = now.getMonth()
 
-  if (day <= 22 && month === 0 ){
+  if (day < 23 && month === 0 ){
     return (
       'day'
     )
-  } else if ( (hour >= 20 || hour < 4) || (hour === 4 && minute < 30)) {
-    console.log('night');
+  } else if (day === 23 && month === 0) {
+    if (hour <= 20 ){
+      return (
+        'day'
+      )
+    } else {
+      return (
+        'night'
+      )
+    }
+  } 
+  else if ( (hour >= 20 || hour < 4) || (hour === 4 && minute < 30)) {
     return ( 
       'night' 
     )
