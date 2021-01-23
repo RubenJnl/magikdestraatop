@@ -10,6 +10,7 @@ import * as Styles from './style/AppStyle';
 function App() {
   const [hond, setHond] = useState(getPreference('hond'));
   const [verklaring, setVerklaring] = useState(getPreference('verklaring'));
+  const [eigenVerklaring, setEigenVerklaring] = useState(getPreference('eigenVerklaring'));
   const [bullshit, setBullshit] = useState(getPreference('bullshit'));
 
   return (
@@ -17,9 +18,11 @@ function App() {
       <Configuration 
         hond={hond} 
         verklaring={verklaring} 
+        eigenVerklaring={eigenVerklaring}
         bullshit={bullshit} 
         setHond={setHond} 
         setVerklaring={setVerklaring} 
+        setEigenVerklaring={setEigenVerklaring}
         setBullshit={setBullshit} 
       />
       <Styles.Container>
@@ -28,7 +31,8 @@ function App() {
         </Styles.Header>
         <Answer 
           hond={hond} 
-          verklaring={verklaring} 
+          verklaring={verklaring}
+          eigenVerklaring={eigenVerklaring}
           bullshit={bullshit}
         />
       </Styles.Container>

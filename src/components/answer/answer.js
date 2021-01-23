@@ -7,10 +7,9 @@ import Counter from '../counter/counter'
 const Answer = ({
   hond,
   verklaring,
+  eigenVerklaring,
   bullshit
 }) => {
-  if (Switch() === 'night') {
-    
     return (
       <>
       {hond && (
@@ -29,37 +28,11 @@ const Answer = ({
           </Styles.SubTitle>
         </Styles.AnswerPositive>
       )}
-      {bullshit && (
-        <Styles.AnswerNegative>
-          Nee
-          <Styles.SubTitle>
-            , we houden je niet tegen maar je bent gewaarschuwd!
-          </Styles.SubTitle>
-        </Styles.AnswerNegative>
-      )}
-      {!hond && !verklaring && !bullshit && (
-        <Styles.AnswerNegative>
-            Nee
-        </Styles.AnswerNegative>
-      )}
-      </>
-    )
-  } else {
-    return (
-      <>
-      {hond && (
+      {eigenVerklaring && (
         <Styles.AnswerPositive>
           Ja
           <Styles.SubTitle>
-            , ook zodra de avondklok ingaat mag je met de hond op pad.
-          </Styles.SubTitle>
-        </Styles.AnswerPositive>
-      )}
-      {verklaring && (
-        <Styles.AnswerPositive>
-          Ja
-          <Styles.SubTitle>
-              , met een verklaring mag je tijdens de avondklok voor je werk op pad
+              , met een geldige eigen verklaring mag je tijdens de avondklok op pad
           </Styles.SubTitle>
         </Styles.AnswerPositive>
       )}
@@ -71,18 +44,26 @@ const Answer = ({
           </Styles.SubTitle>
         </Styles.AnswerNegative>
       )}
-      {!hond && !verklaring && !bullshit && (
-        <Styles.AnswerPositive>
-            Ja
-            <Styles.SubTitle>
-                , Voorlopig nog wel
-            </Styles.SubTitle>
-        </Styles.AnswerPositive>
+      {!hond && !verklaring && !bullshit && !eigenVerklaring &&(
+        <>
+          {Switch() === 'night' && (
+            <Styles.AnswerNegative>
+                Nee
+            </Styles.AnswerNegative>
+          )}
+          {Switch() === 'day' && (
+            <Styles.AnswerPositive>
+              Ja
+              <Styles.SubTitle>
+                  , Voorlopig nog wel
+              </Styles.SubTitle>
+            </Styles.AnswerPositive>
+          )}
+        </>
       )}
-        <Counter></Counter>
+      <Counter></Counter>
       </>
     )
-  }
 }
 
 
