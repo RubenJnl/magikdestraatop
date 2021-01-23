@@ -46,7 +46,7 @@ const Configuration = ({
   
   return (
     <>
-    <Styles.Button onClick={() => {setCheck(!visible)}}>
+    <Styles.Button onClick={() => {setCheck(!visible)}} title="Stel je voorkeuren in">
       <ConfigImg />
     </Styles.Button>
 

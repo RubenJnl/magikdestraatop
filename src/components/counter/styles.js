@@ -4,7 +4,7 @@ import Switch from '../../helpers/switch'
 
 export const Counter = styled.span`
   display: block;
-  font-size: 2rem;
+  font-size: clamp(1.25rem, 2rem, 3vw);
   line-height: 2.5rem;
   font-weight: bold;
   text-align: center;

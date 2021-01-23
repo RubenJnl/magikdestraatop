@@ -25,7 +25,10 @@ export const Wrapper = styled.main`
     @media all and (min-width: 500px), (min-height: 500px) {
         background-image: url(${getBackground().medium});
     }
-
+    @media all and (min-height: 500px) and (max-width: 1280px) {
+        background-size: auto 100%;
+    }
+    
     @media all and (min-width: 1500px) {
         background-image: url(${getBackground().medium});
     }
