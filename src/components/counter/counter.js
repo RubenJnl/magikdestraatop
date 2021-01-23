@@ -31,9 +31,9 @@ function Counter() {
       {(timeLeft ? (
         <> Nog       
           {timeLeft.days === 1 ? ` ${timeLeft.days} dag ` : timeLeft.days > 1 ? ` ${timeLeft.days} dagen ` : ``}
-          {timeLeft.uren === 1 ? ` ${timeLeft.hours} uren ` : `${timeLeft.hours} uur ` }
-          {timeLeft.minutes === 1 ? ` ${timeLeft.minutes} minuut ` : `${timeLeft.minutes} minuten ` }
-          {timeLeft.seconds === 1 ? ` ${timeLeft.seconds} seconde ` : `${timeLeft.seconds} seconden ` } <br />
+          {timeLeft.uren === 1 ? ` ${timeLeft.hours} uur ` : ` ${timeLeft.hours} uur ` }
+          {timeLeft.minutes === 1 ? ` ${timeLeft.minutes} minuut ` : ` ${timeLeft.minutes} minuten ` }
+          {timeLeft.seconds === 1 ? ` ${timeLeft.seconds} seconde ` : ` ${timeLeft.seconds} seconden ` } <br />
           tot de avondklok in gaat!
         </>
       ) : '')}

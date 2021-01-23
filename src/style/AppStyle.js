@@ -8,7 +8,7 @@ export const Header = styled.h1`
   margin: 0;
   line-height: 1.15;
   font-size: 3em;
-  font-size: clamp(2em, 10em, 10vw);
+  font-size: clamp(2em, 7em, 10vw);
 `
 
 export const Wrapper = styled.main`

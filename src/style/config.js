@@ -13,7 +13,17 @@ const Theme = {
             day: 'rgb(16, 35, 72)'
         },
         positive: 'rgb(100, 200, 20)',
-        negative: 'rgb(170, 40, 10)'
+        negative: 'rgb(170, 40, 10)',
+        config: {
+            night: {
+                default: 'green',
+                hover: 'rgb(16, 35, 72)'
+            },
+            day: {
+                default: 'green',
+                hover: 'rgb(16, 35, 72)'
+            }
+        }
     },
     images : {
         day : {

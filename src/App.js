@@ -1,19 +1,44 @@
-// import logo from './logo.svg';
+import React, { useState } from 'react'
 import Answer from './components/answer/answer'
 import Footer from './components/footer/footer'
+import Configuration from './components/configuration/configuration'
+import { getPreference } from './helpers/preference'
+
+import { Adsense } from '@ctrl/react-adsense';
+
 import './App.css';
 import * as Styles from './style/AppStyle';
 
 function App() {
+  const [hond, setHond] = useState(getPreference('hond'));
+  const [verklaring, setVerklaring] = useState(getPreference('verklaring'));
+  const [bullshit, setBullshit] = useState(getPreference('bullshit'));
+
   return (
     <Styles.Wrapper>
+      <Configuration 
+        hond={hond} 
+        verklaring={verklaring} 
+        bullshit={bullshit} 
+        setHond={setHond} 
+        setVerklaring={setVerklaring} 
+        setBullshit={setBullshit} 
+      />
       <Styles.Container>
         <Styles.Header>
           Mag ik de straat op?
         </Styles.Header>
-        <Answer />
+        <Answer 
+          hond={hond} 
+          verklaring={verklaring} 
+          bullshit={bullshit}
+        />
       </Styles.Container>
       
+      <Adsense
+        client="ca-pub-9113549376795619"
+        width="50%"
+      />
       <Footer />
     </Styles.Wrapper>
   );

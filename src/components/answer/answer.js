@@ -4,9 +4,20 @@ import * as Styles from './styles'
 import Switch from '../../helpers/switch'
 import Counter from '../counter/counter'
 
-const Answer = () => {
-
+const Answer = ({
+  hond,
+  verklaring,
+  bullshit
+}) => {
   if (Switch() === 'night') {
+    if (hond){
+      <Styles.AnswerPositive>
+        Ja
+        <Styles.SubTitle>
+          , met de hond
+        </Styles.SubTitle>
+      </Styles.AnswerPositive>
+    }
     return (
       <Styles.AnswerNegative>
           Nee
@@ -15,17 +26,42 @@ const Answer = () => {
   } else {
     return (
       <>
+      {hond && (
+        <Styles.AnswerPositive>
+          Ja
+          <Styles.SubTitle>
+            , ook zodra de avondklok ingaat mag je met de hond op pad.
+          </Styles.SubTitle>
+        </Styles.AnswerPositive>
+      )}
+      {verklaring && (
+        <Styles.AnswerPositive>
+          Ja
+          <Styles.SubTitle>
+              , met een verklaring mag je tijdens de avondklok voor je werk op pad
+          </Styles.SubTitle>
+        </Styles.AnswerPositive>
+      )}
+      {bullshit && (
+        <Styles.AnswerNegative>
+          Nee
+          <Styles.SubTitle>
+            , we houden je niet tegen maar je bent gewaarschuwd!
+          </Styles.SubTitle>
+        </Styles.AnswerNegative>
+      )}
+      {!hond && !verklaring && !bullshit && (
         <Styles.AnswerPositive>
             Ja
             <Styles.SubTitle>
                 , Voorlopig nog wel
             </Styles.SubTitle>
         </Styles.AnswerPositive>
+      )}
         <Counter></Counter>
       </>
     )
   }
-
 }
 
 
