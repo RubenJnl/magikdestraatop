@@ -10,18 +10,39 @@ const Answer = ({
   bullshit
 }) => {
   if (Switch() === 'night') {
-    if (hond){
-      <Styles.AnswerPositive>
-        Ja
-        <Styles.SubTitle>
-          , met de hond
-        </Styles.SubTitle>
-      </Styles.AnswerPositive>
-    }
+    
     return (
-      <Styles.AnswerNegative>
+      <>
+      {hond && (
+        <Styles.AnswerPositive>
+          Ja
+          <Styles.SubTitle>
+            , ook zodra de avondklok ingaat mag je met de hond op pad.
+          </Styles.SubTitle>
+        </Styles.AnswerPositive>
+      )}
+      {verklaring && (
+        <Styles.AnswerPositive>
+          Ja
+          <Styles.SubTitle>
+              , met een verklaring mag je tijdens de avondklok voor je werk op pad
+          </Styles.SubTitle>
+        </Styles.AnswerPositive>
+      )}
+      {bullshit && (
+        <Styles.AnswerNegative>
           Nee
-      </Styles.AnswerNegative>
+          <Styles.SubTitle>
+            , we houden je niet tegen maar je bent gewaarschuwd!
+          </Styles.SubTitle>
+        </Styles.AnswerNegative>
+      )}
+      {!hond && !verklaring && !bullshit && (
+        <Styles.AnswerNegative>
+            Nee
+        </Styles.AnswerNegative>
+      )}
+      </>
     )
   } else {
     return (

@@ -9,7 +9,7 @@ import NightLarge from '../images/francois-hoang-xxZCfAnMUrM-unsplash-original.j
 const Theme = {
     color : {
         title: {
-            night: 'rgb(150, 140, 150)',
+            night: 'rgb(40, 80, 120)',
             day: 'rgb(16, 35, 72)'
         },
         positive: 'rgb(100, 200, 20)',
