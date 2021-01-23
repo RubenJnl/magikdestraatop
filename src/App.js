@@ -4,7 +4,7 @@ import Footer from './components/footer/footer'
 import Configuration from './components/configuration/configuration'
 import { getPreference } from './helpers/preference'
 
-import { Adsense } from '@ctrl/react-adsense';
+// import { Adsense } from '@ctrl/react-adsense';
 
 import './App.css';
 import * as Styles from './style/AppStyle';
@@ -35,10 +35,10 @@ function App() {
         />
       </Styles.Container>
       
-      <Adsense
+      {/* <Adsense
         client="ca-pub-9113549376795619"
         width="50%"
-      />
+      /> */}
       <Footer />
     </Styles.Wrapper>
   );
