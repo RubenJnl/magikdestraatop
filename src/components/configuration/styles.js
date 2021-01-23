@@ -41,7 +41,11 @@ export const OptionRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 0;
+
+  @media (min-width: 500px){
+    padding: 20px;
+  }
 `
 
 export const Toggle = styled.input`
@@ -62,6 +66,7 @@ export const ToggleLabel = styled.label`
   cursor: pointer;
   text-indent: -9999px;
   width: 100px;
+  min-width: 100px;
   height: 50px;
   background: grey;
   display: block;
