@@ -61,7 +61,7 @@ const Configuration = ({
           <Styles.OptionRow>
             <Styles.Toggle id="verklaring" type="checkbox" checked={verklaring} onChange={() => {save('verklaring',!verklaring)}}></Styles.Toggle>
             <Styles.ToggleLabel htmlFor="verklaring"></Styles.ToggleLabel>
-            <Styles.TextLabel htmlFor="verklaring">Ik heb werkgeversverklaring</Styles.TextLabel>
+            <Styles.TextLabel htmlFor="verklaring">Ik heb een werkgeversverklaring</Styles.TextLabel>
           </Styles.OptionRow>
           <Styles.OptionRow>
             <Styles.Toggle id="bullshit" type="checkbox" checked={bullshit} onChange={() => {save('bullshit', !bullshit)}}></Styles.Toggle>
