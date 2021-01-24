@@ -7,7 +7,7 @@ function Counter() {
 
   const Calculate = () => {
     let difference = +new Date(2021, 0, 23, 21) - +new Date()
-
+    
     if (difference < 0 ){
       let counterDate = new Date()
       counterDate.setHours(21)
@@ -27,11 +27,11 @@ function Counter() {
         seconds: Math.floor((difference / 1000) % 60),
       };
     }
-
-    if ((timeLeft.hours === 6 && timeLeft.minutes >= 30) || timeLeft.hours > 6 ) {
+    
+    if ((timeLeft.hours === 16 && timeLeft.minutes >= 30) || timeLeft.hours >= 17 ) {
       timeLeft = false
     }
-
+    
     return timeLeft;
   };
 
