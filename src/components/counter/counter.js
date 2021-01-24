@@ -37,7 +37,7 @@ function Counter() {
 
   useEffect(() => {
     if (diff < 0 ){
-      setStarted(true)
+      setStarted(true, started)
     }
   })
 
