@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as Style from './styles'
 function Counter() {
 
-  let [started, setStarted] = useState(false)
+  const [started, setStarted] = useState(false)
   let diff = +new Date(2021, 0, 23, 21) - +new Date()
 
   const Calculate = () => {
@@ -35,11 +35,11 @@ function Counter() {
     return timeLeft;
   };
 
-  useEffect(() => {
-    if (diff < 0 ){
-      setStarted(true, started)
+  // useEffect(() => {
+    if (diff < 0 && started === false){
+      setStarted(true)
     }
-  })
+  // })
 
   const [timeLeft, setTimeLeft] = useState(Calculate());
   
