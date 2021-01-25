@@ -31,6 +31,9 @@ function Counter() {
     if ((timeLeft.hours === 16 && timeLeft.minutes >= 30) || timeLeft.hours >= 17 ) {
       timeLeft = false
     }
+    if (typeof timeLeft.hours === 'undefined' || typeof timeLeft.minutes === 'undefined') {
+      timeLeft = false
+    }
     
     return timeLeft;
   };
