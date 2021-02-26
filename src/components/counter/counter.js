@@ -3,22 +3,41 @@ import * as Style from './styles'
 function Counter() {
 
   const [started, setStarted] = useState(false)
+  const [current, setCurrent] = useState(false)
   let diff = +new Date(2021, 0, 23, 21) - +new Date()
 
   const Calculate = () => {
     let difference = +new Date(2021, 0, 23, 21) - +new Date()
-    
+
     if (difference < 0 ){
       let counterDate = new Date()
-      counterDate.setHours(21)
-      counterDate.setMinutes(0)
+      if (counterDate.getHours() >= 21 ) {
+        counterDate.setHours(4)
+        counterDate.setMinutes(30)
+        counterDate.setDate(counterDate.getDate() + 1)
+        if (!current) {
+          setCurrent(true)
+        }
+      } else if ( (counterDate.getHours() === 4 && counterDate.getMinutes() < 30) || counterDate.getHours() < 4){
+        counterDate.setHours(4)
+        counterDate.setMinutes(30)
+        counterDate.setDate(counterDate.getDate())
+        if (!current) {
+          setCurrent(true)
+        }
+      } else {
+        counterDate.setHours(21)
+        counterDate.setMinutes(0)
+        counterDate.setDate(counterDate.getDate())
+        if (current){
+          setCurrent(false)
+        }
+      }
       counterDate.setSeconds(0)
-      counterDate.setDate(counterDate.getDate())
-      difference = +new Date(counterDate) - +new Date()     
-    }
+      difference = +new Date(counterDate) - +new Date()  
+    } 
 
     let timeLeft = {};
-
     if (difference > 0) {
       timeLeft = {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -28,9 +47,6 @@ function Counter() {
       };
     }
     
-    if ((timeLeft.hours === 16 && timeLeft.minutes >= 30) || timeLeft.hours >= 17 ) {
-      timeLeft = false
-    }
     if (typeof timeLeft.hours === 'undefined' || typeof timeLeft.minutes === 'undefined') {
       timeLeft = false
     }
@@ -38,11 +54,9 @@ function Counter() {
     return timeLeft;
   };
 
-  // useEffect(() => {
-    if (diff < 0 && started === false){
-      setStarted(true)
-    }
-  // })
+  if (diff < 0 && started === false){
+    setStarted(true)
+  }
 
   const [timeLeft, setTimeLeft] = useState(Calculate());
   
@@ -61,12 +75,17 @@ function Counter() {
           {timeLeft.uren === 1 ? ` ${timeLeft.hours} uur ` : ` ${timeLeft.hours} uur ` }
           {timeLeft.minutes === 1 ? ` ${timeLeft.minutes} minuut ` : ` ${timeLeft.minutes} minuten ` }
           {timeLeft.seconds === 1 ? ` ${timeLeft.seconds} seconde ` : ` ${timeLeft.seconds} seconden ` } <br />
-          {(started ? (
-            <>tot de avondklok weer in gaat vanavond</>
-          ) : ( 
-            <>tot de avondklok in gaat!</> 
-          ) 
-          )}
+          {!current && 
+            <>
+              {(started ? (
+                <>tot de avondklok weer in gaat vanavond</>
+              ) : ( 
+                <>tot de avondklok in gaat!</> 
+              ) 
+              )}
+            </>
+          }
+          {current && <>tot je weer de straat op mag!</>}
         </>
       ) : '')}
     </Style.Counter>

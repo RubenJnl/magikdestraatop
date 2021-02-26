@@ -17,6 +17,12 @@ const Configuration = ({
 }) => {
   const [visible, setCheck] = useState(false);
 
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'Escape' && visible){
+      setCheck(false)
+    }
+  });
+
   const save = (set, value) => {
     if (set === 'hond'){
       setHond(value)
