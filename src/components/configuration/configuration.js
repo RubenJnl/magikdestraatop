@@ -51,7 +51,8 @@ const Configuration = ({
         setPreference('verklaring', false)
         setPreference('eigenVerklaring', false)
         setHond(false)
-        setVerklaring(false)  
+        setVerklaring(false)
+        setEigenVerklaring(false)
       }
 
       setBullshit(value)
