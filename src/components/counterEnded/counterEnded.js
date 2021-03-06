@@ -6,7 +6,7 @@ const CounterEnded = ({
 
   
   const Calculate = () => {
-    let  difference = +new Date() - +new Date(endedDateArray[0], endedDateArray[1], endedDateArray[2], 4, 30)  
+    let  difference = +new Date() - +new Date(endedDateArray[0], endedDateArray[1], endedDateArray[2], endedDateArray[3], endedDateArray[4])  
 
     let timePast = {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -33,7 +33,6 @@ const CounterEnded = ({
         {timePast.uren === 1 ? ` ${timePast.hours} uur ` : ` ${timePast.hours} uur ` }
         {timePast.minutes === 1 ? ` ${timePast.minutes} minuut ` : ` ${timePast.minutes} minuten ` }
         {timePast.seconds === 1 ? ` ${timePast.seconds} seconde ` : ` ${timePast.seconds} seconden ` } <br />
-        Sinds de laatste avondklok
       </>))}
     </Style.Counter>
   );
