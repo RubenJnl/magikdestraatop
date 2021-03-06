@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import * as Style from './styles'
-function Counter() {
+const Counter = () => {
 
   const [started, setStarted] = useState(false)
   const [current, setCurrent] = useState(false)
   let diff = +new Date(2021, 0, 23, 21) - +new Date()
-
+  
   const Calculate = () => {
     let difference = +new Date(2021, 0, 23, 21) - +new Date()
 
@@ -70,7 +70,7 @@ function Counter() {
   return (
      <Style.Counter>
       {(timeLeft ? (
-        <> Nog       
+        <> Nog
           {timeLeft.days === 1 ? ` ${timeLeft.days} dag ` : timeLeft.days > 1 ? ` ${timeLeft.days} dagen ` : ``}
           {timeLeft.uren === 1 ? ` ${timeLeft.hours} uur ` : ` ${timeLeft.hours} uur ` }
           {timeLeft.minutes === 1 ? ` ${timeLeft.minutes} minuut ` : ` ${timeLeft.minutes} minuten ` }
