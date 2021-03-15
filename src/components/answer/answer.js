@@ -1,7 +1,7 @@
 
 import React from "react"
 import * as Styles from './styles'
-import Switch from '../../helpers/switch'
+import SwitchAnswer from '../../helpers/switchAnswer'
 import Counter from '../counter/counter'
 import CounterEnded from '../counterEnded/counterEnded'
 
@@ -61,12 +61,12 @@ const Answer = ({
           )}
           {!hond && !verklaring && !bullshit && !eigenVerklaring &&(
             <>
-              {Switch() === 'night' && (
+              {SwitchAnswer() === 'night' && (
                 <Styles.AnswerNegative>
                     Nee
                 </Styles.AnswerNegative>
               )}
-              {Switch() === 'day' && (
+              {SwitchAnswer() === 'day' && (
                 <Styles.AnswerPositive>
                   Ja
                   <Styles.SubTitle>
