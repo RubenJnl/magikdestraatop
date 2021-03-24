@@ -17,7 +17,7 @@ const Counter = () => {
     if ((month === 2 && dayOfMonth === 31) || (month >= 3 && year >= 2021)){
       compareHour = 22
     }
-    console.log(compareHour);
+    
     if (difference < 0 ){
       let counterDate = new Date()
       if (counterDate.getHours() >= compareHour ) {
