@@ -8,10 +8,19 @@ const Counter = () => {
   
   const Calculate = () => {
     let difference = +new Date(2021, 0, 23, 21) - +new Date()
-
+    let compareHour = 21
+    let now = new Date()
+    const dayOfMonth = now.getDate()
+    const month = now.getMonth()
+    const year = now.getFullYear()
+  
+    if ((month === 2 && dayOfMonth === 31) || (month >= 3 && year >= 2021)){
+      compareHour = 22
+    }
+    console.log(compareHour);
     if (difference < 0 ){
       let counterDate = new Date()
-      if (counterDate.getHours() >= 21 ) {
+      if (counterDate.getHours() >= compareHour ) {
         counterDate.setHours(4)
         counterDate.setMinutes(30)
         counterDate.setDate(counterDate.getDate() + 1)
