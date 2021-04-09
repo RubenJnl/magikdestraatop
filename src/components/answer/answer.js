@@ -11,7 +11,7 @@ const Answer = ({
   eigenVerklaring,
   bullshit
 }) => {
-    const endedDateArray = [2021, 2, 31, 4, 30]
+    const endedDateArray = [2021, 3, 20, 4, 30]
     let ended = +new Date(endedDateArray[0], endedDateArray[1], endedDateArray[2], endedDateArray[3], endedDateArray[4]) < +new Date()
     
     return (<>
